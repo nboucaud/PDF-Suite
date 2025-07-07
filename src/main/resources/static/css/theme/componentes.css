@@ -2,7 +2,8 @@
 body,
 select,
 textarea {
-  background-color: var(--md-sys-color-surface);
+  /* background-color: var(--md-sys-color-surface); */
+  background-color: black;
   color: var(--md-sys-color-on-surface);
 }
 
@@ -60,6 +61,7 @@ td {
 
 .bg-card {
   background-color: var(--md-sys-color-surface-5);
+  background-color: #0A0C0D;
   border-radius: 3rem;
   padding: 2.5rem;
 }

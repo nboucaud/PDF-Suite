@@ -24,10 +24,10 @@
   border-bottom-width: 1px;
   border-color: var(--md-nav-color-on-seperator)">
     <div class="container ">
-      <a class="navbar-brand" th:href="@{'/'}" style="display: flex;">
+     <!-- <a class="navbar-brand" th:href="@{'/'}" style="display: flex;">
         <img class="main-icon" th:src="@{'/favicon.svg'}" alt="icon">
         <span class="icon-text" th:text="${@navBarText}"></span>
-      </a>
+      </a> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="material-symbols-rounded">
@@ -176,8 +176,8 @@
               <span class="go-pro-badge" th:text="#{enterpriseEdition.button}"></span>
             </a>
           </li>
-          <li class="nav-item">
-            <!-- Settings Button -->
+          <!-- <li class="nav-item">
+
             <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#settingsModal"
               th:title="#{navbar.settings}">
               <span class="material-symbols-rounded">
@@ -185,7 +185,7 @@
               </span>
               <span class="icon-text icon-hide" th:data-text="#{navbar.settings}" th:text="#{navbar.settings}"></span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -226,9 +226,12 @@
 
             <a th:href="@{'/swagger-ui/index.html'}" class="btn btn-sm btn-outline-primary mx-1" role="button"
               target="_blank">API</a>
+
+
             <a href="https://github.com/Stirling-Tools/Stirling-PDF/releases"
               class="btn btn-sm btn-outline-primary mx-1" id="update-btn" th:utext="#{settings.update}" role="button"
               target="_blank"></a>
+
           </div>
 
           <div class="mb-3">
