@@ -553,3 +553,44 @@ html[dir="rtl"] .dropdown-menu[data-bs-popper] {
 .hidden {
   visibility: hidden;
 }
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Ensure dropdown menu stays accessible during hover */
+.nav-item.dropdown .dropdown-menu {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.nav-item.dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  z-index: 1000;
+}
+
+
+.dropdown-menu {
+  z-index: 1001;
+}

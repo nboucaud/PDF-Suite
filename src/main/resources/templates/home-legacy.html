@@ -341,6 +341,7 @@
 
 
   <!-- Survey Modal -->
+  <!--/*
   <div class="modal fade" id="surveyModal" tabindex="-1" role="dialog" aria-labelledby="surveyModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -361,7 +362,7 @@
 		</br>
 		</br>
 		 <p th:text="#{survey.meeting.notInterested}">Not a business and/or interested in a meeting?</p>
- 
+
           <p th:text="#{survey.please}">Please consider taking our survey!</p>
           <a href="https://stirlingpdf.info/s/cm28y3niq000o56dv7liv8wsu" target="_blank" class="btn btn-primary"
             id="takeSurvey" th:text="#{survey.button}">Take Survey</a>
@@ -378,6 +379,7 @@
       </div>
     </div>
   </div>
+  */-->
 
   <!-- Analytics Modal -->
   <div class="modal fade" id="analyticsModal" tabindex="-1" role="dialog" aria-labelledby="analyticsModalLabel"
@@ -452,6 +454,7 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
+      /*
       const surveyVersion = "3.0";
       const modal = new bootstrap.Modal(document.getElementById('surveyModal'));
       const dontShowAgain = document.getElementById('dontShowAgain');
@@ -509,14 +512,15 @@
       if (localStorage.getItem('dontShowSurvey')) {
         modal.hide();
       }
+      */
     });
 
     function setAsDefault(value) {
       localStorage.setItem('defaultView', value);
       console.log(`Default view set to: ${value}`);
     }
-    
-    
+
+
   </script>
 
 
