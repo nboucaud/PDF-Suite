@@ -28,7 +28,7 @@
                   <button type="submit" id="submitBtn" class="btn btn-primary" th:text="#{validateSignature.submit}"></button>
                 </div>
               </form>
-              
+
               <!-- Results section -->
               <div id="results" style="display: none;">
                 <h4 th:text="#{validateSignature.results}"></h4>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <th:block th:insert="~{fragments/footer.html :: footer}"></th:block>
+      <!-- <th:block th:insert="~{fragments/footer.html :: footer}"></th:block> -->
     </div>
 
 <script th:inline="javascript">
@@ -97,7 +97,7 @@ document.querySelector('#pdfForm').addEventListener('submit', async (e) => {
     for (const file of fileInput.files) {
         const formData = new FormData();
         formData.append('fileInput', file);
-        
+
         if (certInput.files.length > 0) {
             formData.append('certFile', certInput.files[0]);
         }
@@ -106,7 +106,7 @@ document.querySelector('#pdfForm').addEventListener('submit', async (e) => {
                 method: 'POST',
                 body: formData
             });
-            
+
             const fileResults = await response.json();
             fileResults.forEach(result => {
                 result.fileName = file.name;
@@ -120,7 +120,7 @@ document.querySelector('#pdfForm').addEventListener('submit', async (e) => {
             });
         }
     }
-    
+
     displayResults(results);
 });
 
@@ -129,26 +129,26 @@ function displayResults(results) {
     const listDiv = document.getElementById('signatures-list');
     listDiv.innerHTML = '';
     resultDiv.style.display = 'block';
-    
+
     if (!results || results.length === 0) {
         listDiv.innerHTML = `<div class="alert alert-warning">${escapeHtml(translations.noSignatures)}</div>`;
         return;
     }
-    
+
     results.forEach((result, index) => {
         const signatureDiv = document.createElement('div');
         signatureDiv.className = 'card mb-3';
-        
+
         let validationClass = 'alert-danger';
         let validationIssues = [];
-        
+
         if (!result.valid) {
             validationIssues.push(`${escapeHtml(translations.statusInvalid)}: ${escapeHtml(result.errorMessage || '')}`);
         } else {
-            const isFullyValid = result.valid && 
-                               result.chainValid && 
-                               result.trustValid && 
-                               result.notExpired && 
+            const isFullyValid = result.valid &&
+                               result.chainValid &&
+                               result.trustValid &&
+                               result.notExpired &&
                                result.notRevoked;
 
             if (isFullyValid) {
@@ -157,7 +157,7 @@ function displayResults(results) {
             } else {
                 validationClass = 'alert-warning';
                 validationIssues.push(escapeHtml(translations.mathValid));
-                
+
                 if (!result.chainValid) {
                     validationIssues.push(escapeHtml(translations.chainInvalid));
                 }
@@ -208,7 +208,7 @@ function displayResults(results) {
                     <td>${escapeHtml(result.location)}</td>
                 </tr>
             </table>
-            
+
             <h5>${escapeHtml(translations.certInfo)}</h5>
             <table class="table table-borderless">
                 <tr>
@@ -255,7 +255,7 @@ function displayResults(results) {
         </div>
     </div>
 `;
-        
+
         signatureDiv.innerHTML = content;
         listDiv.appendChild(signatureDiv);
     });
