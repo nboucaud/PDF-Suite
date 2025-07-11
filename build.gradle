@@ -115,7 +115,7 @@ jpackage {
     appName = "Stirling-PDF"
     appVersion = project.version
     vendor = "Stirling-Software"
-    appDescription = "Stirling PDF - Your Local PDF Editor"
+    appDescription = "Discovery - Your Local PDF Editor"
     icon = "src/main/resources/static/favicon.ico"
     verbose = true
 //    mainClass = "org.springframework.boot.loader.launch.JarLauncher"

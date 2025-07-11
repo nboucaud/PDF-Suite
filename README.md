@@ -158,9 +158,9 @@ Stirling-PDF currently supports 39 languages!
 | Vietnamese (Tiếng Việt) (vi_VN)              | ![78%](https://geps.dev/progress/78)   |
 
 
-## Stirling PDF Enterprise
+## Discovery Enterprise
 
-Stirling PDF offers an Enterprise edition of its software. This is the same great software but with added features, support and comforts.
+Discovery offers an Enterprise edition of its software. This is the same great software but with added features, support and comforts.
 Check out our [Enterprise docs](https://docs.stirlingpdf.com/Enterprise%20Edition)
 
 
